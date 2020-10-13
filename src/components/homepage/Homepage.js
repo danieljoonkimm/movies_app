@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { HomepageHeader, HomepageMovies} from './index'
-import { MOVIES_API } from '../theme/API_keys'
+import { MOVIES_API } from '../theme/API_key'
 import Axios from 'axios'
 
 const HomepageContainer = styled.div`
