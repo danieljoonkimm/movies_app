@@ -5,9 +5,14 @@ import axios from '../theme/axios'
 
 const HomepageMoviesContainer = styled.div`
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
 `
 
 export const HomepageMovies = ({ title, fetchURL }) => {
@@ -26,11 +31,11 @@ export const HomepageMovies = ({ title, fetchURL }) => {
     <div>
       <h2>{title}</h2>
 
-      <div>
+      <HomepageMoviesContainer>
         {movies.map( movie => (
           <HomepageMoviesList movie={movie} title={title} images={images}/>
         ))}
-      </div>
+      </HomepageMoviesContainer>
     </div>
   )
 }
