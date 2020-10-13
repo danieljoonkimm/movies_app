@@ -9,7 +9,7 @@ export const HomepageBanner = () => {
     const fetchData = async() => {
       const {data} = await axios.get(request.fetchPopular)
       setMovie(data.results[Math.floor(Math.random() * data.results.length - 1)])
-      return data
+      // return data
     }
     fetchData()
   }, [])
