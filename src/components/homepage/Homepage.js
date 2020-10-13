@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { HomepageHeader, HomepageMovies} from './index'
 import requests from '../theme/requests'
-import Axios from 'axios'
 
 const HomepageContainer = styled.div`
   background-color: #1c1c1c;

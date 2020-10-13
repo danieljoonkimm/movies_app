@@ -21,13 +21,16 @@ export const HomepageMovies = ({ title, fetchURL }) => {
     }
     fetchData()
   }, [fetchURL])
-  console.log(movies)
+
   return (
     <div>
       <h2>{title}</h2>
-      {movies.map( movie => (
-        <HomepageMoviesList movie={movie} title={title} images={images}/>
-      ))}
+
+      <div>
+        {movies.map( movie => (
+          <HomepageMoviesList movie={movie} title={title} images={images}/>
+        ))}
+      </div>
     </div>
   )
 }
