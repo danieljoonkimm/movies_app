@@ -13,7 +13,9 @@ export const Homepage = () => {
     <HomepageContainer>
       <HomepageHeader />
       <HomepageMovies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages}/>
+      <HomepageMovies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <HomepageMovies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>
+      <HomepageMovies title='Top Rated TV Shows' fetchURL={requests.fetchTopRatedTV}/>
       <HomepageMovies title='Upcoming Movies' fetchURL={requests.fetchUpcoming}/>
     </HomepageContainer>
   )
