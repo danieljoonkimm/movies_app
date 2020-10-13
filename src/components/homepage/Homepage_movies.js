@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { HomepageMoviesList } from './Homepage_movies_list'
+import axios from '../theme/axios'
 
 const HomepageMoviesContainer = styled.div`
   display: flex;
@@ -9,21 +10,24 @@ const HomepageMoviesContainer = styled.div`
   width: 100%;
 `
 
-export const HomepageMovies = ({ movies }) => {
-  const { results } = movies
-  console.log(results)
+export const HomepageMovies = ({ title, fetchURL }) => {
+  const [movies, setMovies] = useState([])
+  const images = `https://image.tmdb.org/t/p/w500/`
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const {data} = await axios.get(fetchURL)
+      setMovies(...movies, data.results)
+    }
+    fetchData()
+  }, [fetchURL])
+  console.log(movies)
   return (
     <div>
-      {results === undefined ?
-        <div>Loading</div>
-        :
-        <HomepageMoviesContainer>
-          {results.map(movie => (
-            <HomepageMoviesList movie={movie} key={movie.id}/>
-          )
-          )}
-        </HomepageMoviesContainer>
-      }
+      <h2>{title}</h2>
+      {movies.map( movie => (
+        <HomepageMoviesList movie={movie} title={title} images={images}/>
+      ))}
     </div>
   )
 }
