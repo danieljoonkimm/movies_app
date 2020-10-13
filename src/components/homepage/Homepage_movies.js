@@ -30,7 +30,7 @@ export const HomepageMovies = ({ title, fetchURL }) => {
 
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 style={{ color: 'white' }}>{title}</h2>
 
       <HomepageMoviesContainer>
         {movies.map( movie => (

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { HomepageHeader, HomepageMovies} from './index'
+import { HomepageHeader, HomepageMovies, HomepageBanner } from './index'
 import requests from '../theme/requests'
 
 const HomepageContainer = styled.div`
@@ -12,6 +12,7 @@ export const Homepage = () => {
   return (
     <HomepageContainer>
       <HomepageHeader />
+      <HomepageBanner />
       <HomepageMovies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages}/>
       <HomepageMovies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <HomepageMovies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>
