@@ -22,7 +22,6 @@ export const HomepageMovies = ({ title, fetchURL }) => {
   useEffect(() => {
     const fetchData = async() => {
       const {data} = await axios.get(fetchURL)
-      console.log(data)
       setMovies(...movies, data.results)
     }
     fetchData()
