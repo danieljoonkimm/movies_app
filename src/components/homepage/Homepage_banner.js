@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from '../theme/axios'
 import request from '../theme/requests'
+import { Banner } from './Homepage_outline_banner'
 
 export const HomepageBanner = () => {
   const [movie, setMovie] = useState([])
@@ -13,17 +14,11 @@ export const HomepageBanner = () => {
     }
     fetchData()
   }, [])
-  console.log('what', movie)
 
   return (
-    <div style={{ 
-      backgroundImage: `url("https://image.tmdb.org/t/p/w500/${movie?.poster_path}")`,
-      backgroundPosition: 'center center',
-      backgroundSize: 'cover',
-      height: '40vh'
-      }}>
-      <h1 style={{ top: '50%', position: 'relative', color: 'white'}}>{movie?.title || movie?.name || movie?.original_name}</h1>
-      <p style={{ top: '50%', position: 'relative', color: 'white'}}>{movie?.overview}</p>
-    </div>
+    <Banner style={{ backgroundImage: `url("https://image.tmdb.org/t/p/w500/${movie?.poster_path}")`}}>
+      <Banner.Header>{movie?.title || movie?.name || movie?.original_name}</Banner.Header>
+      <Banner.Paragraph>{movie?.overview}</Banner.Paragraph>
+    </Banner>
   )
 }

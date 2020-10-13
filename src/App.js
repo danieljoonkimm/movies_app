@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      {/* <Homepage /> */}
-      {data.map(person => (
+      <Homepage />
+      {/* {data.map(person => (
         <Card>
           <Card.Body>
             <Card.Title>{person.first_name}</Card.Title>
@@ -20,7 +20,7 @@ function App() {
             <Card.Button></Card.Button>
           </Card.Body>
         </Card>
-      ))}
+      ))} */}
     </div>
   );
 }
