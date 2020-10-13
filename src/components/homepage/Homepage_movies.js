@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { HomepageMoviesList } from './Homepage_movies_list'
 import axios from '../theme/axios'
+import { HomepageAPI } from './homepage_api'
 
 const HomepageMoviesContainer = styled.div`
   display: flex;
@@ -16,17 +17,20 @@ const HomepageMoviesContainer = styled.div`
 `
 
 export const HomepageMovies = ({ title, fetchURL }) => {
-  const [movies, setMovies] = useState([])
+  const {movies} = HomepageAPI(fetchURL)
   const images = `https://image.tmdb.org/t/p/w500/`
 
-  useEffect(() => {
-    const fetchData = async() => {
-      const {data} = await axios.get(fetchURL)
-      setMovies(...movies, data.results)
-    }
-    fetchData()
-  }, [fetchURL])
+  // const [movies, setMovies] = useState([])
+  // const images = `https://image.tmdb.org/t/p/w500/`
 
+  // useEffect(() => {
+  //   const fetchData = async() => {
+  //     const {data} = await axios.get(fetchURL)
+  //     setMovies(...movies, data.results)
+  //   }
+  //   fetchData()
+  // }, [fetchURL])
+  
   return (
     <div>
       <h2 style={{ color: 'white' }}>{title}</h2>
