@@ -13,7 +13,7 @@ export const Homepage = () => {
     <HomepageContainer>
       <Header />
       <Banner />
-      <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages}/>
+      <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
       <Movies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <Movies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>
       <Movies title='Top Rated TV Shows' fetchURL={requests.fetchTopRatedTV}/>

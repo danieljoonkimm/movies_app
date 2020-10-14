@@ -23,7 +23,6 @@ export const Image = styled.img`
   min-height: 250px;
   transition: transform 450ms;
   margin-right: 10px;
-
     &:hover {
       transform: scale(1.08);
     }
