@@ -8,6 +8,7 @@ const HomepageContainer = styled.div`
 `
 
 export const Homepage = () => {
+  //loop this later with 5 components of movies with title looped as well with different fetchURLs
 
   return (
     <HomepageContainer>
