@@ -8,10 +8,30 @@ const HomepageContainer = styled.div`
 `
 
 export const Homepage = () => {
-  //loop this later with 5 components of movies with title looped as well with different fetchURLs
+  const { fetchPopular, fetchPopularTV, fetchTopRated, fetchTopRatedTV, fetchUpcoming } = requests
+
+  const titles = [
+    {'Popular Movies': fetchPopular},
+    {'Popular TV Shows': fetchPopularTV},
+    {'Top Rated Movies': fetchTopRated},
+    {'Top Rated TV Shows': fetchTopRatedTV},
+    {'Upcoming Movies': fetchUpcoming}
+  ]
+
+  //this works too
+  const traverseData = () => {
+    let rows = []
+    for(let i = 0; i < titles.length; i++) {
+      Object.keys(titles[i]).forEach(key => rows.push([key, titles[i][key]]))
+    }
+    
+    return rows.map( movie => 
+    <Movies title={movie[0]} fetchURL={movie[1]} />)
+  }
 
   return (
     <HomepageContainer>
+      {/* {traverseData()} */}
       <Header />
       <Banner />
       <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>

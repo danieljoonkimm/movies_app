@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-size: cover;
   height: 40vh;
   ${props => props.movie &&
-    `background-image: url(https://image.tmdb.org/t/p/w500${props.movie})`
+    `background-image: url(https://image.tmdb.org/t/p/w500${props?.movie})`
   }
 `
 
