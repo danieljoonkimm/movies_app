@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Movies, Header, Banner } from './index'
+import { Movies, Header, Banner, Search } from './index'
 import requests from '../theme/requests'
 
 const HomepageContainer = styled.div`
@@ -21,6 +21,7 @@ export const Homepage = () => {
   return (
     <HomepageContainer>
       <Header />
+      <Search placeholder='search ..'/>
       <Banner />
       <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
       <Movies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
