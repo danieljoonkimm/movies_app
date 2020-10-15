@@ -31,7 +31,7 @@ export const Homepage = () => {
 
   return (
     <HomepageContainer>
-      {/* {traverseData()} */}
+      {traverseData()}
       <Header />
       <Banner />
       <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
