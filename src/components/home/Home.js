@@ -18,20 +18,8 @@ export const Homepage = () => {
     {'Upcoming Movies': fetchUpcoming}
   ]
 
-  //this works too
-  const traverseData = () => {
-    let rows = []
-    for(let i = 0; i < titles.length; i++) {
-      Object.keys(titles[i]).forEach(key => rows.push([key, titles[i][key]]))
-    }
-    
-    return rows.map( movie => 
-    <Movies title={movie[0]} fetchURL={movie[1]} />)
-  }
-
   return (
     <HomepageContainer>
-      {traverseData()}
       <Header />
       <Banner />
       <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
