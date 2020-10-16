@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import { MoviesLayout } from './Movies_layout'
 import { MoviesAPI } from './movies_api'
+import {Context} from '../../theme/store'
 
 export const Movies = ({ title, fetchURL, isMain }) => {
   const {movies} = MoviesAPI(fetchURL)
   const images = `https://image.tmdb.org/t/p/w500/`
 
-  //import text = once search filter complete, need to access search input data here..so i can filter from api call
-    //movies.filter(whateverdata => whateverdata.name === text)
+  const [state, dispatch] = useContext(Context);
+
+  useEffect(() => {
+    console.log(movies, state)
+  }, [state])
 
   return (
     <div>

@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { SearchLayout } from './Search_layout'
 import { UseForm } from './useForm'
+import { Context } from '../../theme/store'
 
 export const Search = ({ placeholder }) => {
   const [keyword, setKeyword] = useState('')
   const [search, handleSearch] = UseForm('')
 
+  const [state, dispatch] = useContext(Context);
+
   useEffect(() => {
     setKeyword(prevState => prevState = search)
+    dispatch({type: 'SEARCH_TEXT', payload: search})
   }, [search])
 
   return (
