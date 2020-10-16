@@ -4,13 +4,11 @@ import { UseForm } from './useForm'
 import { Context } from '../../theme/store'
 
 export const Search = ({ placeholder }) => {
-  const [keyword, setKeyword] = useState('')
   const [search, handleSearch] = UseForm('')
 
   const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
-    setKeyword(prevState => prevState = search)
     dispatch({type: 'SEARCH_TEXT', payload: search})
   }, [search])
 
@@ -22,8 +20,3 @@ export const Search = ({ placeholder }) => {
     </SearchLayout>
   )
 }
-
-
-let array = [1,2,3,4]
-
-array.pop()
