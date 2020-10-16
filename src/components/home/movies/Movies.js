@@ -6,6 +6,9 @@ export const Movies = ({ title, fetchURL, isMain }) => {
   const {movies} = MoviesAPI(fetchURL)
   const images = `https://image.tmdb.org/t/p/w500/`
 
+  //import text = once search filter complete, need to access search input data here..so i can filter from api call
+    //movies.filter(whateverdata => whateverdata.name === text)
+
   return (
     <div>
       <MoviesLayout.Title>{title}</MoviesLayout.Title>
