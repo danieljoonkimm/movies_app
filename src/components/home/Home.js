@@ -18,16 +18,29 @@ export const Homepage = () => {
     {'Upcoming Movies': fetchUpcoming}
   ]
 
+  const loopAndDisplay = () => {
+    let rows = []
+
+    for(let i = 0; i < titles.length; i++) {
+      Object.keys(titles[i]).forEach(key => (
+        rows.push(<Movies title={key} fetchURL={titles[i][key]}></Movies>)
+      ))
+    }
+    return rows
+  }
+
   return (
     <HomepageContainer>
       <Header />
       <Search placeholder='search ..'/>
       <Banner />
-      <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
+      
+      {loopAndDisplay()}
+      {/* <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
       <Movies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <Movies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>
       <Movies title='Top Rated TV Shows' fetchURL={requests.fetchTopRatedTV}/>
-      <Movies title='Upcoming Movies' fetchURL={requests.fetchUpcoming}/>
+      <Movies title='Upcoming Movies' fetchURL={requests.fetchUpcoming}/> */}
     </HomepageContainer>
   )
 }
