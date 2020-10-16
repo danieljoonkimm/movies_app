@@ -23,6 +23,7 @@ export const Homepage = () => {
 
     for(let i = 0; i < titles.length; i++) {
       Object.keys(titles[i]).forEach(key => (
+        key == 'Popular Movies' ? rows.push(<Movies title={key} fetchURL={titles[i][key]} isMain></Movies>) :
         rows.push(<Movies title={key} fetchURL={titles[i][key]}></Movies>)
       ))
     }
@@ -32,10 +33,9 @@ export const Homepage = () => {
   return (
     <HomepageContainer>
       <Header />
+      {loopAndDisplay()}
       <Search placeholder='search ..'/>
       <Banner />
-      
-      {loopAndDisplay()}
       {/* <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
       <Movies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <Movies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>

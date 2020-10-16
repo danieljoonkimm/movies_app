@@ -13,8 +13,8 @@ MoviesLayout.Title = ({ children }) => {
   )
 }
 
-MoviesLayout.Image = ({ src, alt }) => {
+MoviesLayout.Image = ({ src, alt, handleMovieClick }) => {
   return (
-    <Image src={src} alt={alt} />
+    <Image src={src} alt={alt} onClick={handleMovieClick} />
   )
 }

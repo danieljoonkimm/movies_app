@@ -21,12 +21,17 @@ export const Movies = ({ title, fetchURL, isMain }) => {
     console.log(finalFilter)
   }, [text])
 
+  const handleMovieClick = () => {
+    console.log('clicked')
+  }
+
   return (
     <div>
       <MoviesLayout.Title>{title}</MoviesLayout.Title>
       <MoviesLayout>
         {movies.map( movie => (
           <MoviesLayout.Image
+            handleMovieClick={handleMovieClick}
             src={isMain ? images+movie?.poster_path : images+movie?.backdrop_path}
             alt={movie.title}
             key={movie.id} />
