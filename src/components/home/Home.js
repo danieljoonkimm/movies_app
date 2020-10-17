@@ -33,14 +33,14 @@ export const Homepage = () => {
   return (
     <HomepageContainer>
       <Header />
-      {loopAndDisplay()}
+      {/* {loopAndDisplay()} */}
       <Search placeholder='search ..'/>
       <Banner />
-      {/* <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
+      <Movies title='Popular Movies' fetchURL={requests.fetchPopular} images={requests.fetchImages} isMain/>
       <Movies title='Popular TV Shows' fetchURL={requests.fetchPopularTV}/>
       <Movies title='Top Rated Movies' fetchURL={requests.fetchTopRated}/>
       <Movies title='Top Rated TV Shows' fetchURL={requests.fetchTopRatedTV}/>
-      <Movies title='Upcoming Movies' fetchURL={requests.fetchUpcoming}/> */}
+      <Movies title='Upcoming Movies' fetchURL={requests.fetchUpcoming}/>
     </HomepageContainer>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 import { MoviesLayout } from './Movies_layout'
 import { MoviesAPI } from './movies_api'
 import { Context } from '../../theme/store'
@@ -9,16 +9,16 @@ export const Movies = ({ title, fetchURL, isMain }) => {
 
   const [state, dispatch] = useContext(Context);
   const { text } = state
+  const [searchResults, setSearchResults] = useState([])
+
+  const results = movies.map(movie => {
+    return movie.original_title ? movie.original_title : movie.original_name
+  })
 
   useEffect(() => {
-    let regex = /text/gi
-    const filtered = movies.map(movie => {
-      return movie.original_title
-    })
-    let finalFilter = filtered.filter(each => {
-      console.log(each)
-    })
-    console.log(finalFilter)
+    const filter = results.filter(movie => movie.toLowerCase().includes(text))
+    setSearchResults(filter)
+    console.log(searchResults)
   }, [text])
 
   const handleMovieClick = () => {
