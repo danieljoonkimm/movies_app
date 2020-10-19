@@ -18,7 +18,6 @@ export const Movies = ({ title, fetchURL, isMain }) => {
   useEffect(() => {
     const filter = results.filter(movie => movie.toLowerCase().includes(text))
     setSearchResults(filter)
-    console.log(searchResults)
   }, [text])
 
   const handleMovieClick = () => {
